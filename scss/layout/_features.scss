@@ -1,5 +1,5 @@
 .features {
-	@extend %section;
+	@include section(94px, 94px, var(--main-bcg-color));
 }
 .features__list {
 	@extend %reset-list;

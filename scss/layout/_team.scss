@@ -1,13 +1,11 @@
 .team {
-	@extend %section;
-	@extend %section--accent;
+	@include section(94px, 94px, var(--secondary-bcg-color));
 }
 .team__list {
 	@extend %reset-list;
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--indent);
-	/* outline: 1px solid rgb(231, 10, 58); */
 }
 .team__item {
 	/* --items:4; */

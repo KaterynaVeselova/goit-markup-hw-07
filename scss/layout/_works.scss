@@ -1,6 +1,5 @@
 .works {
-	@extend %section;
-	@extend %section--padding-dif;
+	@include section(0, 94px, var(--main-bcg-color));
 }
 .works__list {
 	@extend %reset-list;
@@ -9,7 +8,6 @@
 
 	gap: var(--indent);
 	text-align: center;
-	/* outline: 1px solid rgb(231, 10, 58); */
 }
 .works__item {
 	--items: 3;

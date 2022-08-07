@@ -2,8 +2,8 @@
 	@extend %reset-list;
 	display: flex;
 	flex-wrap: wrap;
+	text-align: start;
 	gap: var(--indent);
-	/* outline: 1px solid rgb(231, 10, 124); */
 }
 .project__link {
 	@extend %reset-link;
@@ -13,22 +13,19 @@
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0), 0px 4px 4px rgba(0, 0, 0, 0), 1px 4px 6px rgba(0, 0, 0, 0);
 
 	transition: box-shadow var(--animation);
-	/* outline: 1px solid rgb(154, 71, 255); */
-}
-.project__link:hover,
-.project__link:focus {
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+	&:hover,
+	&:focus {
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+	}
 }
 .project__image {
 	display: block;
-	/* outline: 1px solid rgb(95, 255, 71); */
 }
 .project__content {
 	padding: 20px 24px;
 
 	border: 1px solid var(--border-color);
 	border-top: none;
-	/* outline: 1px solid blue; */
 }
 .project__header {
 	margin-bottom: 4px;
@@ -38,12 +35,10 @@
 	font-size: 18px;
 	line-height: 2;
 	letter-spacing: 0.02em;
-	/* outline: 1px solid blueviolet; */
 }
 .project__desc {
 	font-size: 16px;
 	line-height: 1.88;
-	/* outline: 1px solid rgb(226, 177, 43); */
 }
 .project__backdrop {
 	position: relative;
@@ -54,7 +49,6 @@
 	top: 0;
 	left: 0;
 	transform: translateY(100%);
-	/*transform: translateY(0);*/
 	opacity: 0;
 
 	width: 100%;
@@ -66,13 +60,18 @@
 	background-color: rgba(33, 150, 243, 0.8);
 
 	transition: transform var(--animation), opacity var(--animation);
+	.project__link:hover &,
+	.project__link:focus & {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 .project__backdrop-text {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, 50%);
-	/*translate(-50%, -50%)*/
+
 	/* user-select: none; */
 	opacity: 0;
 
@@ -87,14 +86,10 @@
 	color: var(--main-bcg-color);
 
 	transition: transform var(--animation), opacity var(--animation);
-}
-.project__link:hover .project__backdrop::before,
-.project__link:focus .project__backdrop::before {
-	opacity: 1;
-	transform: translateY(0);
-}
-.project__link:hover .project__backdrop-text,
-.project__link:focus .project__backdrop-text {
-	opacity: 1;
-	transform: translate(-50%, -50%);
+
+	.project__link:hover &,
+	.project__link:focus & {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
 }
