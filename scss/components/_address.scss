@@ -1,0 +1,21 @@
+.address__list {
+	@extend %reset-list;
+}
+.address__item:not(:last-child) {
+	margin-bottom: 9px;
+}
+.address__link {
+	@extend %reset-link;
+	color: var(--footer-contacts-color);
+
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.71;
+	display: inline-block;
+
+	transition: color var(--animation);
+	&:hover,
+	&:focus {
+		color: var(--main-header-color);
+	}
+}
