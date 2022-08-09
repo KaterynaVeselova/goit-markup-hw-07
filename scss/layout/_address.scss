@@ -4,6 +4,7 @@
 .address__item:not(:last-child) {
 	margin-bottom: 9px;
 }
+
 .address__link {
 	@extend %reset-link;
 
@@ -16,6 +17,9 @@
 	transition: color var(--animation);
 	&:hover,
 	&:focus {
+		color: var(--main-header-color);
+	}
+	.address__item:first-child & {
 		color: var(--main-header-color);
 	}
 }

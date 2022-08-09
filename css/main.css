@@ -925,6 +925,7 @@ body {
 }
 
 .features__header {
+  text-align: left;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: var(--secondary-header-color);
@@ -1095,6 +1096,9 @@ body {
   transition: color var(--animation);
 }
 .address__link:hover, .address__link:focus {
+  color: var(--main-header-color);
+}
+.address__item:first-child .address__link {
   color: var(--main-header-color);
 }
 
